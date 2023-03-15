@@ -5,7 +5,7 @@ from django.db import models
 class producto(models.Model):
    id= models.AutoField(primary_key=True)
    producto = models.CharField(max_length=20)
-   staok= models.IntegerField()
+   stok= models.IntegerField()
 
 
 class trabajadores(models.Model):
@@ -20,4 +20,3 @@ class clientes(models.Model):
     nombre= models.CharField(max_length=30)
     apellido= models.CharField(max_length=30)
     recurrencia = models.IntegerField()
-    
