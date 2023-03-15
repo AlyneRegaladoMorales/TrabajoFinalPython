@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.urls import path
 
 from TiendaApp.views import index
-from TiendaApp.views import mostrar_clientes
-from TiendaApp.views import mostrar_producto
-from TiendaApp.views import mostrar_trabajadores
+from TiendaApp.views import mostrar_clientes,mostrar_producto,mostrar_trabajadores
+from TiendaApp.views import agregar_cliente,agregar_producto,agregar_trabajadores
+
 
 
 
@@ -30,6 +30,11 @@ urlpatterns = [
     path('clientes/',mostrar_clientes,name="clientes"),
     path('productos/',mostrar_producto,name="productos"),
     path('trabajdores/',mostrar_trabajadores,name="trabajdores"),
+
+    path('clientes/agregar',agregar_cliente,name="clientes"),
+    path('productos/agregar',agregar_producto,name="productos"),
+    path('trabajdores/agregar',agregar_trabajadores,name="trabajdores"),
+    
     
 
 ]

@@ -11,6 +11,13 @@ def mostrar_producto(request):
     }
     return render(request,"TiendaApp/productos.html",context)
 
+def agregar_producto(request):
+    prod_form = ProductoForm(request.POST)
+    prod_form.save()
+    context = {
+        "form":ProductoForm()
+    }
+    return render(request,"TiendaApp/productos.html",context)
 
     
 
@@ -23,10 +30,26 @@ def mostrar_clientes(request):
     }
     return render(request,"TiendaApp/clientes.html",context)
 
+def agregar_cliente(request):
+    cli_form = ClienteForm(request.POST)
+    cli_form.save()
+    context = {
+        "form":ClienteForm()
+    }
+    return render(request,"TiendaApp/clientes.html",context)
+
 
 
 def mostrar_trabajadores(request):
     context={
         "form":TrbajadorForm(),
+    }
+    return render(request,"TiendaApp/trabajdores.html",context)
+
+def agregar_trabajadores(request):
+    trab_form = TrbajadorForm(request.POST)
+    trab_form.save()
+    context = {
+        "form":ClienteForm()
     }
     return render(request,"TiendaApp/trabajdores.html",context)
