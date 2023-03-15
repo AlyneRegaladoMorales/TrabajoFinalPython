@@ -22,7 +22,14 @@ def agregar_producto(request):
     }
     return render(request,"TiendaApp/productos.html",context)
 
-    
+#busqwueda
+def busqueda_productos(request):
+    criterio =request.GET.get("criterio")
+    context={
+        "prod":producto.objects.filter(producto__icontains=criterio).all(),
+    }
+    return render(request,"TiendaApp/productos.html",context)
+
 
 def index(request):
     return render(request,"TiendaApp/index.html")
@@ -43,6 +50,13 @@ def agregar_cliente(request):
     }
     return render(request,"TiendaApp/clientes.html",context)
 
+def busqueda_cliente(request):
+    criterio =request.GET.get("criterio")
+    context={
+        "prod":clientes.objects.filter(nombre__icontains=criterio).all(),
+    }
+    return render(request,"TiendaApp/clientes.html",context)
+
 
 
 def mostrar_trabajadores(request):
@@ -58,5 +72,13 @@ def agregar_trabajadores(request):
     context = {
         "form":ClienteForm(),
         "trab":trabajadores.objects.all(),
+    }
+    return render(request,"TiendaApp/trabajdores.html",context)
+
+
+def busqueda_trabajadores(request):
+    criterio =request.GET.get("criterio")
+    context={
+        "prod":trabajadores.objects.filter(cargo__icontains=criterio).all(),
     }
     return render(request,"TiendaApp/trabajdores.html",context)

@@ -4,10 +4,12 @@
 
 <main>
     <h1> Registro de clientes </h1>
-    <form action="{% url 'agregar_cliente' %}" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Agregar">
-    </form>
+    {%if form %}
+        <form action="{% url 'agregar_cliente' %}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Agregar">
+        </form> 
+    {% endif %}
 </main>
 {% endblock %}

@@ -4,11 +4,14 @@
 
 <main>
     <h1>Registro de trabajadores</h1>
-    <form action="{% url 'agregar_trabajadores' %}" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Agregar">
-    </form>
+    {%if form %}
+        <form action="{% url 'agregar_trabajadores' %}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Agregar">
+        </form>
+    {% endif %}
+    
 </main>
 
 {% endblock %}

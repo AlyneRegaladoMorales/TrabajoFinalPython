@@ -19,6 +19,7 @@ from django.urls import path
 from TiendaApp.views import index
 from TiendaApp.views import mostrar_clientes,mostrar_producto,mostrar_trabajadores
 from TiendaApp.views import agregar_cliente,agregar_producto,agregar_trabajadores
+from TiendaApp.views import busqueda_cliente,busqueda_productos,busqueda_trabajadores
 
 
 
@@ -34,6 +35,8 @@ urlpatterns = [
     path('clientes/agregar',agregar_cliente,name="clientes"),
     path('productos/agregar',agregar_producto,name="productos"),
     path('trabajdores/agregar',agregar_trabajadores,name="trabajdores"),
+    
+    path('productos/buscar',busqueda_productos,name="busqueda_productos"),
     
     
 
