@@ -16,6 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from TiendaApp.views import index
+from TiendaApp.views import clientes
+from TiendaApp.views import productos
+from TiendaApp.views import trabajdores
+
+
+
 urlpatterns = [
+
+    path('', index, name="index"),    
     path('admin/', admin.site.urls),
+    path('clientes/',clientes,name="clientes"),
+    path('productos/',productos,name="productos"),
+    path('trabajdores/',trabajdores,name="trabajdores"),
+    
+
 ]
